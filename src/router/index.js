@@ -1,8 +1,11 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Home from "../views/Home.vue";
-import Index from "../views/Index.vue";
-import TodoList from "../views/TodoList.vue";
+import Home from "../views/Home";
+import Index from "../views/Index";
+import TodoList from "../views/TodoList";
+import User from "../views/User";
+import UserAdd from "../components/User/UserAdd";
+import UserList from "../components/User/UserList";
 import Content from "../components/Content"
 
 Vue.use(VueRouter);
@@ -31,6 +34,23 @@ const routes = [
     path: "/TodoList",
     name: "TodoList",
     component: TodoList
+  },
+  {
+    path: "/User",
+    name: "User",
+    component: User,
+    children: [
+      //子路由配置
+      {
+        path: "/User/UserAdd",
+        name: "UserAdd",
+        component: UserAdd,
+      }, {
+        path: "/User/UserList",
+        name: "UserList",
+        component: UserList,
+      }
+    ]
   },
   {
     path: "/content/:aid",
