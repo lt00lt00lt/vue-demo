@@ -31,7 +31,7 @@
  * TodoList待办事项Demo
  * @author LongTeng 2019-12-03
  */
-import storage from "../model/storage";
+import storage from "../util/storage";
 
 export default {
   name: "TodoList",
